@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Directory</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h3>Directory</h3>
+    <ol>
+      <% @file_list.each do |file| %>
+      <li>
+        <a href=<%= file %>><%= file %></a>
+      </li>
+      <% end %>
+    </ol>
+    <%
+      order = (params['sort'] == 'desc') ? 'ascending' : 'descending'
+      link = (params['sort'] == 'desc') ? '/' : '/?sort=desc'
+    %>
+    <a href=<%= link %>>Sort <%= order %></a>
+  </body>
+</html>
