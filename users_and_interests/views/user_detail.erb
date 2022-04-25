@@ -1,0 +1,16 @@
+<h2><%= @name.capitalize %></h2>
+<p>
+  Email: <%= @email %>
+</p>
+<p>
+  Interests: <%= @interests.join(', ') %>
+</p>
+<h2>Other Users</h2>
+<ul>
+  <% other_names = @names.reject { |name| name == @name } %>
+  <% other_names.each do |name| %>
+    <li>
+      <a href="/users/<%= name %>"><%= name.capitalize %></a>
+    </li>
+  <% end %>
+</ul>
